@@ -44,3 +44,19 @@ window.onresize=()=>{
 window.onscroll=()=>{
     funBusImage.style.width = '100%';
 }
+  
+ 
+const bottomImg = document.querySelector('.content-destination > img');
+bottomImg.onwheel = ()=>{
+    let scale = 1;
+    scale += event.deltaY * -0.005;
+    bottomImg.style.transform = `scale(${scale})`;
+};
+
+document.querySelectorAll('.destination > div').forEach((item) => {
+    item.addEventListener('copy',(event)=>{
+        event.preventDefault();
+        item.innerHTML = 'Why have you stolen my secrets???????';
+        item.style.color = 'red';
+    })
+});
